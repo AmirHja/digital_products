@@ -16,7 +16,7 @@ class Category(models.Model):
         db_table = 'categories'
         verbose_name = _('category')
         verbose_name_plural = _('categories')
-        ordering = 'title'
+        ordering = ['title']
         indexes = [models.Index(fields=['title']), models.Index(fields=['is_enabled'])]
 
 
@@ -33,7 +33,7 @@ class Product(models.Model):
         db_table = 'products'
         verbose_name = _('product')
         verbose_name_plural = _('products')
-        ordering = '-created_time'
+        ordering = ['-created_time']
         indexes = [models.Index(fields=['title']), models.Index(fields=['-created_time'])]
 
 
@@ -49,7 +49,7 @@ class File(models.Model):
         db_table = 'files'
         verbose_name = _('file')
         verbose_name_plural = _('files')
-        ordering = '-created_time'
+        ordering = ['-created_time']
         indexes = [models.Index(fields=['title']), models.Index(fields=['-created_time'])]
 
 
